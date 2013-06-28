@@ -1,0 +1,39 @@
+@import "bootstrap";
+/* universal */
+html {
+  overflow-y: scroll;
+}
+body {
+  padding-top: 60px;
+}
+div.main_container
+{
+  margin-top: 40px;
+
+}
+
+
+label.label_password
+{
+  padding-left:190px
+
+}
+label.label_email
+{
+  padding-left:50px
+}
+
+a.forgot_password_link
+{
+  padding-left:100px
+
+}
+
+
+
+
+/*.navbar .navbar-inner {
+    background-color: #2c2c2c;
+    background-image: none;
+}*//* For overriding navbar color*/
+@import "bootstrap-responsive";

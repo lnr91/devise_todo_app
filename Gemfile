@@ -9,6 +9,7 @@ gem 'bootstrap-sass'
 gem 'bootstrap-will_paginate', '0.0.6'
 gem 'simple_form'
 gem 'jquery-rails'
+gem 'devise'   # full authentication system gem
 
 group :development, :test do
   gem 'pg','0.12.2'

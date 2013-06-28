@@ -1,0 +1,9 @@
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name),html:{class:'form-inline navbar-form pull-right',id:'signin_form_header'}) do |f| %>
+    <%= f.text_field :email,placeholder:'email' %>&emsp;
+    <%= f.password_field :password,placeholder:'password' %>
+    <%= f.submit 'Sign in' %><br />
+    <%= f.label :remember_me %>
+    <%= f.check_box :remember_me, :as => :boolean if devise_mapping.rememberable? %>
+    <%= link_to "Forgot your password?", new_password_path('user'),class:'forgot_password_link' %>
+
+<% end %>

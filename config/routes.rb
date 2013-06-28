@@ -1,4 +1,23 @@
 DeviseTodoApp::Application.routes.draw do
+
+
+  get "lists/create"
+
+  get "lists/show"
+
+  get "lists/destroy"
+
+  get "lists/update"
+
+  devise_for :users
+
+  resources :users do
+    resources :profiles
+  end
+
+
+  root to: 'pages#home'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

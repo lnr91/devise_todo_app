@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Todoodle - <%=yield :title%></title>
+  <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<header class='navbar navbar-fixed-top navbar-inverse'>
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="#">Todoodle</a>
+      <nav>
+        <ul class="nav pull-right">
+          <% if user_signed_in? %>
+              <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
+              <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+
+          <% end %>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class='container main_container'>
+  <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key==:notice ? 'success' : 'error' %>">
+        <a class="close" data-dismiss="alert" href="#">&times;</a><%= value %>
+      </div>
+  <% end %>
+
+  <%= yield %>
+</div>
+</body>
+</html>
