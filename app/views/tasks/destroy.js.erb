@@ -1,0 +1,5 @@
+<% if @destroyed_task %>
+  $('#edit_task_<%=@destroyed_task.id %>').remove();
+<%else %>
+//show error message
+<% end %>

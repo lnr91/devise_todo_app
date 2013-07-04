@@ -1,0 +1,22 @@
+<%= content_for :title, @list.name %>
+<div class='parent_div'><h2 class='main_header'><%= @list.name %> </h2>
+
+  <div class='list_desc'>--<i><%= @list.description %></i></div>
+</div>
+
+Unfinished Tasks
+<div class='tasks'id='incomplete_tasks'>
+  <div class='empty_message'><div class='center hero-unit' id='tasks_empty'>My little grasshopper..You have no tasks left to do !</div></div>
+  <% @list.tasks.incomplete.each do |task| %>
+      <%= render task %>
+  <% end %>
+</div>
+Finished Tasks
+<div class='tasks'id='completed_tasks'>
+  <% @list.tasks.completed.each do |task| %>
+      <%= render task %>
+  <% end %>
+</div>
+
+
+<%= render 'tasks/new' %>

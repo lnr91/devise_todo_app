@@ -1,0 +1,5 @@
+<%if @destroyed_list %>
+ $('div#list_<%=@destroyed_list.id %>').remove();
+<% else %>
+// Add an error message
+<% end %>

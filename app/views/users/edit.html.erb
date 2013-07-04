@@ -1,0 +1,6 @@
+<%= content_for :title,'Edit profile' %>
+<h2>Edit profile</h2>
+<%= simple_form_for @user, class: 'form-horizontal' do |f| %>
+    <%= f.input :nick_name ,required: true%>
+    <%= f.submit 'Update profile' %>
+<% end %>

@@ -13,7 +13,7 @@ gem 'devise'   # full authentication system gem
 
 group :development, :test do
   gem 'pg','0.12.2'
-  gem 'rspec-rails' ,'2.10.0'
+  gem 'rspec-rails' ,'2.10.1'
   gem 'database_cleaner'
   gem 'launchy'
 end

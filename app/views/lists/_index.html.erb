@@ -1,0 +1,8 @@
+<h3 class='main_header'>My TODO Lists</h3>
+<div class="lists" id="lists">
+  <ul class="lists">
+
+   <%= render @lists if @lists.present?%>
+    <div id='lists_empty' class='centre hero-unit'>You have no lists ! Create a list now !</div>  <!--We show this if there are no lists and hide it if a list  is created-->
+  </ul>
+</div>

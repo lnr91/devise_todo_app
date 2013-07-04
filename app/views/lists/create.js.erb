@@ -1,0 +1,7 @@
+<% if @list.save %>
+$('ul.lists').append('<%= j render @list %>');
+<% @list = List.new(); %>
+$('#new_list').html('<%= j render("lists/new",new_list:@list) %>');
+<% else %>
+$('#new_list').html('<%= j render("lists/new",new_list:@list) %>');
+<% end %>

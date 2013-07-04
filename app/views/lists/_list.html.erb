@@ -1,0 +1,5 @@
+<div id="list_<%= list.id %>">
+  <li><%= link_to list.name, user_list_path(current_user.id, list.id), class: 'item_names' %>
+  </li>&emsp;
+  <%= link_to '(remove)',user_list_path(current_user,list),method: :delete,remote: true %>
+</div>

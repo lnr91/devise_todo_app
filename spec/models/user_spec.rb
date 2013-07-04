@@ -15,6 +15,7 @@ describe User do
   it { should respond_to(:lists) }
   it { should respond_to(:encrypted_password) } #taken care of bydevise
   it { should respond_to(:reset_password_token) } #taken care of bydevise
+  it {should respond_to(:admin)}
   it { should be_valid }
 
   describe 'when email is not present' do

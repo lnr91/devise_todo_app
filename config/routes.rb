@@ -1,18 +1,17 @@
 DeviseTodoApp::Application.routes.draw do
 
 
-  get "lists/create"
+  devise_for :users, path: 'accounts'
 
-  get "lists/show"
-
-  get "lists/destroy"
-
-  get "lists/update"
-
-  devise_for :users
+  devise_scope :user do
+    get "/accounts/sign_in" => "devise/sessions#new", as: "signin"   # no need for this...but i did this because in y previous todo app...i had tests that used the signin_path often to go to the signin page...so here i have created a named route : signin_path ....its route is same as new_session_path which devise creates by default....so in tests u can use either of them..see http://stackoverflow.com/questions/4503550/route-alias-in-rails  and http://guides.rubyonrails.org/routing.html#overriding-the-named-helpers   for more
+  end
 
   resources :users do
-    resources :profiles
+    resources :lists do
+      resources :tasks
+    end
+
   end
 
 

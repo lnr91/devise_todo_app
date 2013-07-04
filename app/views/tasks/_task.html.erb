@@ -1,0 +1,8 @@
+<%= form_for [current_user, @list, task], remote: true do |f| %>
+    <%= f.label 'completed_'+task.object_id.to_s, class: 'checkbox' do %>
+        <%= f.check_box :completed ,id:'task_completed_'+task.object_id.to_s%>   <!--have overridden default id because label works only if there is a unique id in each page-->
+        <%= task.description %>
+    <% end %>
+    <%= link_to "remove",user_list_task_path(current_user, @list, task),method: :delete,remote: true %>
+    <%= f.submit "Update" %>        <!--We hide this button in jquery-->
+<% end %>

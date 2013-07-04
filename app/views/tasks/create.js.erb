@@ -1,0 +1,6 @@
+<% if @task.save %>
+ $('#incomplete_tasks').append('<%= j render @task %>');
+<% @task = @list.tasks.build %>
+$('#new_task').html('<%= j render "tasks/new"   %>')
+ //show error message
+<% end %>

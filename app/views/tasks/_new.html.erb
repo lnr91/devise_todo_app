@@ -1,0 +1,4 @@
+<%= simple_form_for([current_user,@list,@task],class:'form-horizontal',remote:true) do |f| %>
+    <%= f.input :description, required: true %>
+    <%= f.submit %>
+<% end %>
